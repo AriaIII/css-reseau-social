@@ -1,3 +1,8 @@
+:root {
+    --primary: #2c3e50;
+    --padding: 5px 10px;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -13,7 +18,10 @@ body {
 }
 
 .topbar {
-    background: #2C3E50;
+  /* on ajoute ici la valeur en dur du background pour internet explorer qui ne supporte pas les variables
+    voir http://preset-env.cssdb.org/playground */
+    background: #2c3e50;
+    background: var(--primary, #000);
     padding: 15px;
 }
 
@@ -39,7 +47,7 @@ body {
 }
 
 .topbar a.active {
-    color: #FFF;
+  color: #fff;
 }
 
 .sidebar-left nav {
@@ -117,6 +125,21 @@ body {
     margin-top: 0;
 }
 
+.btn {
+    background-color: #2c3e50;
+    background-color: var(--primary);
+    color: #fff;
+    padding: 5px 10px;
+    padding: var(--padding);
+    border-radius: 3px;
+    margin: 5px;
+    border: 0;
+}
+
+.purple-theme {
+    --primary: #c49ac8;
+}
+
 .post-footer {
     background: #fbfbfb;
     display:flex;
@@ -188,7 +211,7 @@ ici pour le pousse levé */
 
 .suggestion-alias {
     font-weight: 700;
-    color: rgba(0, 0, 0, .87);
+    color: rgba(0, 0, 0, 0.87);
 }
 
 .suggestion-photo {
@@ -255,4 +278,3 @@ ici pour le pousse levé */
         display: block;
     }
 }
-
