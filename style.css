@@ -1,0 +1,258 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #F5F5F5;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    color: rgba(0, 0, 0, .60);
+    line-height: 1.5;
+    font-weight: 400;
+    margin: 12px 18px;
+}
+
+.topbar {
+    background: #2C3E50;
+    padding: 15px;
+}
+
+.topbar h1 {
+    text-align: center;
+    color: #FFF;
+    margin-top: 0;
+}
+
+.topbar nav {
+    text-align: center;
+}
+
+.topbar a {
+    color:rgba(255, 255, 255, .67);
+    text-decoration: none;
+    padding: 0 15px 15px 15px;
+}
+
+.topbar a:hover {
+    color: #FFF;
+    transition: color .3s;
+}
+
+.topbar a.active {
+    color: #FFF;
+}
+
+.sidebar-left nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 15px;
+}
+
+.sidebar-left nav a {
+    color: rgba(0, 0, 0, .60);
+    text-decoration: none;
+    display: block;
+    width: 50%;
+    padding: 5px 3px 5px 0;
+}
+
+.sidebar-left nav a:hover, .sidebar-left nav a.active {
+    color: #000;
+    background: #FFF;
+    border-radius: 3px;
+}
+
+.sidebar-left nav a img {
+    padding: 0 20px 0 10px;
+}
+
+/* .main .container {
+    overflow: hidden;
+} */
+
+.post, .profile-overview {
+    background: #FFF;
+    border: 1px solid #DBDBDB;
+    border-radius: 3px;
+    margin-top: 15px;
+}
+
+.post-header, .profile-header {
+    position: relative;
+    padding: 0.5rem;
+}
+
+.post-header img, .profile-header img {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+
+.post-date, .author, .registration-date, .member {
+    padding-left: 50px;
+}
+
+.author, .member {
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0;
+}
+
+.post-date {
+    font-size: 12px;
+    color: rgba(0, 0, 0, .38);
+}
+.post-img {
+    width: 100%;
+    height: auto;
+}
+
+.post-text, .profile-summary {
+    padding: 0 0.5rem;
+}
+
+.post-text p {
+    margin-top: 0;
+}
+
+.post-footer {
+    background: #fbfbfb;
+    display:flex;
+    border-top: 1px solid #DBDBDB;
+    padding : 13px 0;
+}
+
+.like, .comment {
+    /* display:flex; */
+    padding: 0 0.5rem;
+}
+
+/* pour aligner le nb de commentaires à droite
+restera à droite si il n'y a pas la partie like
+du coup, mieux que justify-content:space-between */
+.comment {
+    margin-left: auto;
+}
+
+/* commenté pour utiliser l'inclusion d'icône en css */
+/* .like img, .comment img {
+    width: 18px;
+    height: 18px;
+} */
+
+/* ajouter une icône en passant par le css, 
+ici pour le pousse levé */
+.like p::before, .comment p::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 20px;
+    height: 18px;
+    background: url(img/thumb.png) center center / 20px 18px no-repeat;
+}
+/* et la bulle de commentaire */
+.comment p::before {
+    background: url(img/bubble.png) center center / 20px 18px no-repeat;
+}
+
+.like p, .comment p {
+    margin: 0;
+}
+
+.profile-overview {
+    display: none;
+}
+
+.suggestion>p {
+    font-weight: 700;
+    color: rgba(0, 0, 0, .87);
+    /* border-bottom: 1px solid #000;  */
+}
+
+/* au lieu de border-bottom au-dessus */
+.suggestion>p::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: #000;
+}
+
+.friend {
+    position: relative;
+    height: 85px;
+}
+
+.suggestion-alias {
+    font-weight: 700;
+    color: rgba(0, 0, 0, .87);
+}
+
+.suggestion-photo {
+    position: absolute;
+}
+
+.friend p, .suggestion-alias  {
+    padding-left: 75px;
+    margin: 0;
+}
+
+.suggestion-add {
+    position: absolute;
+    left: 73px;
+    top: 55px;
+    color: #000;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.suggestion-add img {
+    margin-bottom: -2px;
+}
+
+@media only screen and (min-width: 850px) {
+    .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo h1 {
+        margin: 0;
+    }
+    
+    .body {
+        display: flex;
+        margin: 12px 50px;
+    }
+
+    .sidebar-left {
+        flex-basis: 20%;
+        margin-right: 30px;
+    }
+
+    .sidebar-right {
+        flex-basis: 30%;
+        margin-left: 30px;
+    }
+
+    .main {
+        flex-basis: 50%;
+    }
+
+    .sidebar-left nav {
+        display: block;
+        height: 100%;
+    }
+
+    .sidebar-left nav a {
+        width: 100%;
+    }
+    .profile-overview {
+        display: block;
+    }
+}
+
